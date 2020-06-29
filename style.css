@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.background {
+	background: #548CFF;
+	width: 100%;
+	min-height: calc(100vh - 30px);
+	padding: 30px 0 0 0;
+}
+
+.pikachu {
+	/* background: red; */
+  appearance: none;
+  margin: 90px auto 13px;
+  height: 30px;
+  width: 52px;
+  background-image: url('img/pikachu-sprite-trans.png');
+  background-position: -29px -141px;
+	background-repeat: no-repeat;
+	transform: scale(2);
+  animation: run .5s step-start infinite;
+}
+
+.cloud{
+	position: absolute;
+	height: 100px;
+	top: 30px;
+	right: -300px;
+}
+.cloud:nth-child(1){
+	animation: cloud-small 90s both infinite linear;
+}
+.cloud:nth-child(2){
+	top: 40px;
+	animation: cloud-large 90s both infinite linear;
+}
+
+.ground {
+	height: 32px;
+	width: 100vw;
+	background: #C84C0C url('img/groundblock32.png');
+	animation: scroll-ground .25s linear infinite;
+}
+
+@keyframes run {
+  33% { background-position: -89px -141px; }
+  66% { background-position: -149px -141px; }
+}
+
+@keyframes scroll-ground {
+  100% { background-position: -32px 0; }
+}
+
+@keyframes cloud-small {
+	from{right: -300px;}
+	to{right: 100%;}
+}
+
+@keyframes cloud-large {
+	from{right: -300px;}
+	to{right: 100%;}
+}
